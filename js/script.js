@@ -8,7 +8,7 @@ let allTasks = []
 const openDialog = () => { 
     new Swal({
         html: `
-            <div class="space-y-6 py-6 px-4 relative">
+            <div class="space-y-6 py-6 px-4 relative select-none">
                 <h1 class="text-xl font-semibold text-left text-black">New Task</h1>
                 <form class="flex flex-col gap-8" onsubmit="createTask(event)">
                     <input 
@@ -66,7 +66,7 @@ const fetchTasks = () => {
     const tasksEle = document.getElementById('tasks');
     if(allTasks.length === 0){
         tasksEle.innerHTML = `
-            <div>
+            <div class="select-none">
                 <h1 class="animate__animated animate__pulse animate__infinite lg:text-2xl font-semibold text-center lg:mb-10 my-5 border border-2 border-indigo-600 w-fit mx-auto lg:py-4 py-2 lg:px-8 px-4 rounded-xl"><span class="text-green-500 underline decoration-green-500 underline-offset-4">Plan</span> and <span class="text-green-500 underline decoration-green-500 underline-offset-4">WIN</span> your day 🚀</h1>
                 <img 
                     src="./images/poster.png"
@@ -79,7 +79,7 @@ const fetchTasks = () => {
             
            for(let i=0; i<allTasks.length; i++){
                 const taskUI = `
-                <div class=" flex justify-between items-center py-2.5 lg:px-8 px-4 bg-white rounded-md shadow-lg hover:shadow-indigo-500 transition-shadow ease-in duration-300 ">
+                <div class="select-none flex justify-between items-center py-2.5 lg:px-8 px-4 bg-white rounded-md shadow-lg hover:shadow-indigo-500 transition-shadow ease-in duration-300 ">
                             
                     <div class="flex items-center lg:gap-4 gap-3">
                         <input 
@@ -111,9 +111,7 @@ const fetchTasks = () => {
                     const currentTask = tasksEle.lastElementChild
                     const checkbox = currentTask.querySelector('input[type="checkbox"]')
                     markCompleted(checkbox)
-    }
-// }
-
+            }
         }
     }
 }
@@ -131,7 +129,7 @@ const deleteData = (index) => {
 const openEditDialog = (task, key) => {
     new Swal({
         html: `
-            <div class="space-y-6 py-6 px-4 relative">
+            <div class="space-y-6 py-6 px-4 relative select-none">
                 <h1 class="text-xl font-semibold text-left text-black">Edit Task</h1>
                 <form class="flex flex-col gap-8" onsubmit="editTask(event, '${key}')">
                     <input 
@@ -152,7 +150,6 @@ const openEditDialog = (task, key) => {
     })
 }
 
-// 'Update Task', 'Update your task', 'Update', 'updateTask', ${key}
 
 const editTask = (e, index) => {
     e.preventDefault()
@@ -191,16 +188,12 @@ const getToast = (color, title) => {
     }).then(() => {
         if(location.href){
             location.href = location.href
-            // fetchTasks()
         }
     })
 }
 
 const isTaskDone = (checkbox, index) => {
     const isChecked = checkbox.checked;
-    // const parentEle = checkbox.parentElement.parentElement;
-
-    // const isChecked = checkbox.checked;
 
     if(isChecked){
         allTasks[index].isTaskDone = true
@@ -213,7 +206,8 @@ const isTaskDone = (checkbox, index) => {
     markCompleted(checkbox)
 }
 
- const markCompleted = (checkbox) => {
+
+const markCompleted = (checkbox) => {
 
     
     const isChecked = checkbox.checked;
