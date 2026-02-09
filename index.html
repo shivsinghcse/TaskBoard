@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taskkboard</title>
+    <title>Taskboard</title>
     <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
      <link
@@ -25,17 +25,17 @@
                 <h1 class="text-4xl font-bold cursor-default">Task<span class="text-indigo-600">Board</span></h1>
             </div>
 
-            <div class="flex justify-center items-center lg:gap-6 gap-3">
+            <div class="flex justify-center items-center lg:gap-6 gap-3 sm:gap-1">
                 <input 
                     type="text" 
                     name="search" 
                     id="search" 
                     placeholder="Search your task"
-                    class="border border-gray-400 flex-1 py-1.5 px-2.5 placeholder-slate-500 rounded focus:outline-indigo-600 text-indigo-500"
+                    class="border border-gray-400 lg:flex-1 w-[60%] py-1.5 px-2.5 placeholder-slate-500 rounded focus:outline-indigo-600 text-indigo-500"
                 />
-                <button class="bg-indigo-500 text-white lg:px-8 px-2 py-1.5 lg:font-medium rounded  hover:cursor-pointer hover:bg-indigo-600"
+                <button class="bg-indigo-500 text-white lg:px-8 px-2 py-2 lg:font-medium rounded  hover:cursor-pointer hover:bg-indigo-600 align-middle"
                 onclick="openDialog()">
-                    <i class="ri-add-line text-lg"></i>
+                    <i class="ri-add-line lg:text-lg text-md font-medium"></i>
                     New Task
                 </button>
             </div>
