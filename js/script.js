@@ -171,7 +171,7 @@ const getToast = (color, title) => {
         customClass: {
             popup: 'colored-toast',
         },
-        timer: 1000,
+        timer: 500,
         width: isMobile ? '70vw' : '320px',
         timerProgressBar: true,
         showConfirmButton: false,
